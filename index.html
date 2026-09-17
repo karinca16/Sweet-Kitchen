@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Kitchen</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            🍰 <span>Sweet Kitchen</span>
+        </div>
+
+        <div class="game-stats">
+
+            <div class="stat">
+                ⭐
+                <span id="score">0</span>
+            </div>
+
+            <div class="stat">
+                ❤️
+                <span id="lives">3</span>
+            </div>
+
+            <div class="stat">
+                ⏱️
+                <span id="timer">60</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= START SCREEN ================= -->
+
+    <section id="startScreen" class="start-screen">
+
+        <div class="start-card">
+
+            <div class="chef">
+                👩🏻‍🍳
+            </div>
+
+            <h1>Sweet Kitchen</h1>
+
+            <p>
+                Masak makanan sesuai pesanan pelanggan!
+            </p>
+
+            <button id="startButton" class="primary-button">
+                Mulai Memasak 🍳
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GAME ================= -->
+
+    <main id="gameScreen" class="game hidden">
+
+        <!-- PESANAN -->
+
+        <section class="order-card">
+
+            <div class="customer">
+                👩🏻
+            </div>
+
+            <div class="order-content">
+
+                <span class="order-label">
+                    PESANAN PELANGGAN
+                </span>
+
+                <h2 id="recipeName">
+                    Strawberry Cake
+                </h2>
+
+                <p id="recipeDescription">
+                    Buat kue strawberry yang lezat!
+                </p>
+
+            </div>
+
+            <div class="order-food" id="orderFood">
+                🍰
+            </div>
+
+        </section>
+
+
+        <!-- ================= DAPUR ================= -->
+
+        <section class="kitchen">
+
+            <!-- KIRI : BAHAN -->
+
+            <div class="ingredients-panel">
+
+                <h3>🛒 Bahan</h3>
+
+                <p class="instruction">
+                    Klik bahan sesuai urutan resep
+                </p>
+
+                <div id="ingredients" class="ingredient-list">
+                </div>
+
+            </div>
+
+
+            <!-- TENGAH : MEJA MASAK -->
+
+            <div class="cooking-panel">
+
+                <div class="kitchen-background">
+
+                    <!-- RAK -->
+
+                    <div class="shelf">
+                        🍯 🫙 🍶 🥫
+                    </div>
+
+                    <!-- KOMPOR -->
+
+                    <div class="stove">
+
+                        <div class="fire">
+                            🔥
+                        </div>
+
+                        <div class="pan">
+                            <div id="panFood">
+                                🥣
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- MEJA -->
+
+                    <div class="counter">
+
+                        <div class="mixing-bowl">
+
+                            <div class="bowl-food" id="bowlFood">
+                                🥣
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BAHAN TERPILIH -->
+
+                <div class="selected-area">
+
+                    <h3>Bahan yang dipilih</h3>
+
+                    <div id="selectedIngredients"
+                         class="selected-ingredients">
+
+                        <span class="empty-text">
+                            Belum ada bahan
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOMBOL MASAK -->
+
+                <button id="cookButton"
+                        class="cook-button"
+                        disabled>
+
+                    🔥 Masak Sekarang
+
+                </button>
+
+            </div>
+
+
+            <!-- KANAN : RESEP -->
+
+            <div class="recipe-panel">
+
+                <h3>📖 Resep</h3>
+
+                <div class="recipe-progress">
+
+                    <div class="progress-title">
+
+                        <span>Progress</span>
+
+                        <span id="progressText">
+                            0 / 5
+                        </span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div id="progress"
+                             class="progress">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="recipeSteps"
+                     class="recipe-steps">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <section id="resultScreen"
+             class="result-screen hidden">
+
+        <div class="result-card">
+
+            <div id="resultFood"
+                 class="result-food">
+
+                🍰
+
+            </div>
+
+            <div id="resultIcon"
+                 class="result-icon">
+
+                🎉
+
+            </div>
+
+            <h1 id="resultTitle">
+                Masakan Berhasil!
+            </h1>
+
+            <p id="resultMessage">
+                Pelanggan menyukai masakanmu!
+            </p>
+
+            <div class="result-score">
+
+                ⭐
+                <span id="finalScore">
+                    0
+                </span>
+
+            </div>
+
+            <button id="restartButton"
+                    class="primary-button">
+
+                🔄 Main Lagi
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= POPUP ================= -->
+
+    <div id="popup"
+         class="popup hidden">
+
+        <div class="popup-content">
+
+            <div id="popupIcon">
+                ❌
+            </div>
+
+            <h2 id="popupTitle">
+                Salah!
+            </h2>
+
+            <p id="popupMessage">
+                Bahan tidak sesuai.
+            </p>
+
+            <button id="popupButton">
+                Lanjut
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1117 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffdce8,
+            #fff3f7
+        );
+
+    color: #593d47;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+
+    height: 75px;
+
+    padding: 0 35px;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px
+        rgba(160, 80, 110, 0.12);
+
+}
+
+.logo {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    color: #d95f89;
+
+}
+
+.game-stats {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+.stat {
+
+    background: #fff0f5;
+
+    padding: 10px 17px;
+
+    border-radius: 15px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   START SCREEN
+========================= */
+
+.start-screen {
+
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.start-card {
+
+    width: 480px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(170, 80, 110, 0.15);
+
+}
+
+.chef {
+
+    font-size: 95px;
+
+    animation:
+        chefFloat 2s infinite ease-in-out;
+
+}
+
+@keyframes chefFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+.start-card h1 {
+
+    font-size: 42px;
+
+    color: #d95f89;
+
+    margin: 15px 0 10px;
+
+}
+
+.start-card p {
+
+    color: #91727d;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.primary-button {
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 15px;
+
+    background: #e8759b;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.primary-button:hover {
+
+    background: #d95f87;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+.game {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 25px;
+
+}
+
+
+/* =========================
+   ORDER CARD
+========================= */
+
+.order-card {
+
+    background: white;
+
+    padding: 18px 25px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(160, 80, 110, .1);
+
+}
+
+.customer {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: #ffe5ee;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 36px;
+
+}
+
+.order-label {
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    color: #d96c91;
+
+}
+
+.order-content {
+
+    flex: 1;
+
+}
+
+.order-content h2 {
+
+    margin: 4px 0;
+
+}
+
+.order-content p {
+
+    color: #95747d;
+
+    font-size: 14px;
+
+}
+
+.order-food {
+
+    font-size: 65px;
+
+}
+
+
+/* =========================
+   KITCHEN
+========================= */
+
+.kitchen {
+
+    display: grid;
+
+    grid-template-columns:
+        220px
+        1fr
+        250px;
+
+    gap: 18px;
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================
+   PANEL
+========================= */
+
+.ingredients-panel,
+.recipe-panel {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(160, 80, 110, .08);
+
+}
+
+.ingredients-panel h3,
+.recipe-panel h3 {
+
+    color: #d45e86;
+
+    margin-bottom: 6px;
+
+}
+
+.instruction {
+
+    font-size: 12px;
+
+    color: #9c7c85;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   INGREDIENT
+========================= */
+
+.ingredient-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.ingredient {
+
+    width: 100%;
+
+    border: 2px solid #f6d8e1;
+
+    background: #fffafb;
+
+    padding: 11px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    text-align: left;
+
+}
+
+.ingredient:hover {
+
+    transform: translateX(4px);
+
+    border-color: #e8759b;
+
+    background: #fff0f5;
+
+}
+
+.ingredient.used {
+
+    opacity: .35;
+
+    pointer-events: none;
+
+}
+
+.ingredient.wrong {
+
+    animation: shake .3s;
+
+}
+
+@keyframes shake {
+
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    75% {
+        transform: translateX(6px);
+    }
+
+}
+
+.ingredient-emoji {
+
+    font-size: 28px;
+
+}
+
+.ingredient-name {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   COOKING PANEL
+========================= */
+
+.cooking-panel {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(160, 80, 110, .08);
+
+}
+
+.kitchen-background {
+
+    height: 360px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            #fff0f4 0 58%,
+            #e9b4a6 58% 100%
+        );
+
+}
+
+
+/* =========================
+   SHELF
+========================= */
+
+.shelf {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70%;
+
+    padding: 10px;
+
+    text-align: center;
+
+    background: #c68a7c;
+
+    border-radius: 8px;
+
+    font-size: 30px;
+
+    letter-spacing: 12px;
+
+}
+
+
+/* =========================
+   STOVE
+========================= */
+
+.stove {
+
+    position: absolute;
+
+    bottom: 80px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+.fire {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    animation:
+        fireAnimation .4s infinite alternate;
+
+}
+
+@keyframes fireAnimation {
+
+    from {
+        transform: scale(.9);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+
+}
+
+.pan {
+
+    width: 210px;
+
+    height: 55px;
+
+    background: #555;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 42px;
+
+}
+
+.pan::after {
+
+    content: "";
+
+    width: 90px;
+
+    height: 15px;
+
+    background: #444;
+
+    position: absolute;
+
+    right: -70px;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 85px;
+
+    background: #c98b7e;
+
+}
+
+
+/* =========================
+   BOWL
+========================= */
+
+.mixing-bowl {
+
+    position: absolute;
+
+    left: 15%;
+
+    bottom: 25px;
+
+    width: 130px;
+
+    height: 65px;
+
+    background: #f4a8bf;
+
+    border-radius:
+        15px
+        15px
+        55px
+        55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.bowl-food {
+
+    font-size: 40px;
+
+}
+
+
+/* =========================
+   SELECTED INGREDIENTS
+========================= */
+
+.selected-area {
+
+    margin-top: 12px;
+
+}
+
+.selected-area h3 {
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+
+}
+
+.selected-ingredients {
+
+    min-height: 50px;
+
+    padding: 8px;
+
+    border-radius: 15px;
+
+    background: #fff4f7;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+}
+
+.selected-item {
+
+    background: white;
+
+    padding: 6px 10px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 3px 8px
+        rgba(100, 50, 70, .08);
+
+}
+
+.empty-text {
+
+    color: #ad929a;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   COOK BUTTON
+========================= */
+
+.cook-button {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    margin-top: 12px;
+
+    border-radius: 15px;
+
+    background: #ddd;
+
+    color: #999;
+
+    font-weight: bold;
+
+    cursor: not-allowed;
+
+}
+
+.cook-button.ready {
+
+    background: #e8759b;
+
+    color: white;
+
+    cursor: pointer;
+
+    animation:
+        buttonPulse 1s infinite alternate;
+
+}
+
+@keyframes buttonPulse {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.02);
+    }
+
+}
+
+
+/* =========================
+   RECIPE STEPS
+========================= */
+
+.recipe-progress {
+
+    margin: 20px 0;
+
+}
+
+.progress-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+
+}
+
+.progress-bar {
+
+    height: 10px;
+
+    background: #f1dce3;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+.progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #e8759b;
+
+    transition: .3s;
+
+}
+
+.recipe-steps {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+.recipe-step {
+
+    padding: 10px;
+
+    background: #fff6f8;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+}
+
+.recipe-step.active {
+
+    background: #ffe0eb;
+
+    font-weight: bold;
+
+    border-left: 4px solid #e8759b;
+
+}
+
+.recipe-step.done {
+
+    opacity: .5;
+
+    text-decoration: line-through;
+
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result-screen {
+
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.result-card {
+
+    width: 500px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(160, 80, 110, .15);
+
+}
+
+.result-food {
+
+    font-size: 100px;
+
+    animation:
+        resultFood 1s ease;
+
+}
+
+@keyframes resultFood {
+
+    0% {
+        transform: scale(.2) rotate(-20deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+.result-icon {
+
+    font-size: 45px;
+
+    margin: 10px;
+
+}
+
+.result-card h1 {
+
+    color: #d95f89;
+
+}
+
+.result-card p {
+
+    color: #92737d;
+
+    margin: 10px 0 20px;
+
+}
+
+.result-score {
+
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border-radius: 15px;
+
+    background: #fff0f5;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(70, 35, 45, .35);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 10;
+
+}
+
+.popup-content {
+
+    width: 350px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    animation:
+        popupAnimation .3s ease;
+
+}
+
+@keyframes popupAnimation {
+
+    from {
+        transform: scale(.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+#popupIcon {
+
+    font-size: 55px;
+
+}
+
+#popupTitle {
+
+    color: #d95f89;
+
+    margin: 10px;
+
+}
+
+#popupMessage {
+
+    color: #92737d;
+
+    margin-bottom: 20px;
+
+}
+
+#popupButton {
+
+    border: none;
+
+    background: #e8759b;
+
+    color: white;
+
+    padding: 11px 25px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .kitchen {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .cooking-panel {
+
+        grid-column: span 2;
+
+        grid-row: 1;
+
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .topbar {
+
+        padding: 0 15px;
+
+    }
+
+    .logo span {
+
+        display: none;
+
+    }
+
+    .game-stats {
+
+        gap: 5px;
+
+    }
+
+    .stat {
+
+        padding: 8px 10px;
+
+        font-size: 12px;
+
+    }
+
+    .kitchen {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cooking-panel {
+
+        grid-column: span 1;
+
+    }
+
+    .order-food {
+
+        font-size: 40px;
+
+    }
+
+}
